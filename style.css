@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9999;
+    pointer-events: none;
+    background-size: 100% 2px, 3px 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgb(20, 245, 0);
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+nav a {
+    color: #33ff00;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+nav a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 15px #ff0000;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.card, .skill-group, .cert-card, .bio-box {
+    background: rgba(255, 0, 0, 0.048);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #ff0055; 
+    padding: 25px;
+    border-radius: 0 15px 0 15px; 
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-8px); 
+    border-color: #00ff9f; 
+    background: rgba(0, 255, 159, 0.1);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2), inset 0 0 10px rgba(0, 255, 159, 0.1);
+    border-left: 4px solid #00ff9f;
+}
+
+e
+.view-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #00ff9f;
+    color: #00ff9f;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: #00ff9f;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 159, 0.6);
+}
