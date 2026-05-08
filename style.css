@@ -9,11 +9,9 @@ body {
     color: #ffffff !important;
 }
 
-
 h1, h2, h3, h4, p, span, li, div, a {
     color: #ffffff !important;
 }
-
 
 body::before {
     content: " ";
@@ -48,11 +46,7 @@ body::before {
 }
 
 .hud-nav ul {
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    display: flex; gap: 30px; margin: 0; padding: 0; list-style: none;
 }
 
 .hud-nav a {
@@ -62,11 +56,6 @@ body::before {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-.hud-nav a:hover {
-    color: #ffffff !important;
-    text-shadow: 0 0 10px #ff0055;
 }
 
 
@@ -91,27 +80,6 @@ body::before {
 .cover-wrapper { position: relative; height: 220px; }
 .cyber-banner { height: 100%; background: #000; border-bottom: 2px solid #33ff00; position: relative; overflow: hidden; }
 
-
-.code-overlay::after {
-    
-    content: "10101011010101010101101010101010110101010101011010101010101101010101010110101010101011010101010101101010101010110101010101011010101010101101010101010110101010101011010101010101101010101010110101010101011010101010101101010101010110101010101011010101010101101010101010110101010101011010101010101101010101010110101010101011010101010";
-    position: absolute; 
-    font-family: 'Courier New', monospace; 
-    font-size: 14px;
-    line-height: 14px;
-    color: rgba(51, 255, 0, 0.15); 
-    top: 0; left: 0; right: 0;
-    width: 100%;
-    word-break: break-all;
-    animation: matrix-fall 20s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes matrix-fall { 
-    from { transform: translateY(-50%); } 
-    to { transform: translateY(0%); } 
-}
-
 .banner-grid {
     width: 100%; height: 100%;
     background-image: radial-gradient(rgba(51, 255, 0, 0.2) 1px, transparent 0);
@@ -121,11 +89,19 @@ body::before {
     z-index: 1;
 }
 
-.avatar-wrapper { position: absolute; bottom: -60px; left: 40px; z-index: 2; }
+
+.avatar-wrapper { position: absolute; bottom: -60px; left: 40px; z-index: 10; }
 .profile-avatar {
     width: 140px; height: 140px; border-radius: 50%;
     border: 6px solid #0a0a0a; object-fit: cover;
     box-shadow: 0 0 20px rgba(51, 255, 0, 0.3);
+    
+    animation: avatar-pulse 3s linear infinite;
+}
+
+@keyframes avatar-pulse {
+    0%, 85%, 100% { filter: brightness(1); box-shadow: 0 0 20px rgba(51, 255, 0, 0.3); }
+    92% { filter: brightness(1.3); box-shadow: 0 0 40px #33ff00; }
 }
 
 .profile-details { padding: 80px 40px 40px; }
@@ -164,13 +140,82 @@ body::before {
     padding: 15px; border-radius: 8px;
 }
 
-.tech-logo { height: 40px; width: 40px; object-fit: contain; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
+.tech-logo { height: 40px; width: 40px; object-fit: contain; }
 
 h1, h2, h3 { font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 3px; }
 .justified-text { text-align: justify; font-size: 1.1rem; line-height: 1.7; }
 
-
 @media screen and (max-width: 768px) {
     .hud-nav { width: 95%; clip-path: none; border-radius: 20px; padding: 10px 20px; }
     .hud-nav ul { gap: 15px; }
+    
+}
+
+.cyber-popup {
+
+    background: rgba(10, 10, 10, 0.7) !important; 
+    
+
+    backdrop-filter: blur(15px) saturate(180%) !important; 
+    -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
+    
+    border: 2px solid #33ff00 !important;
+    border-radius: 0 !important;
+    
+    
+    box-shadow: 0 0 40px rgba(51, 255, 0, 0.15), 
+                inset 0 0 20px rgba(51, 255, 0, 0.1) !important;
+}
+
+
+.swal2-icon.swal2-success {
+    background: transparent !important;
+    border-color: rgba(51, 255, 0, 0.8) !important;
+}
+
+
+.cyber-title {
+    font-family: 'Orbitron', sans-serif !important;
+    color: #33ff00 !important;
+    text-shadow: 0 0 15px rgba(51, 255, 0, 1) !important;
+    letter-spacing: 5px;
+}
+
+
+.cyber-content {
+    font-family: 'Rajdhani', sans-serif !important;
+    font-weight: 700;
+    color: #ffffff !important;
+    letter-spacing: 2px;
+}
+
+
+.swal2-icon.swal2-success {
+    border-color: #33ff00 !important;
+}
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+    background-color: #33ff00 !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: .25em solid rgba(51, 255, 0, 0.3) !important;
+}
+
+
+.cyber-btn {
+    background: transparent !important;
+    border: 1px solid #ff0055 !important;
+    border-radius: 0 !important;
+    color: #ff0055 !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 0.8rem !important;
+    padding: 15px 40px !important;
+    box-shadow: 4px 4px 0px #33ff00 !important;
+    transition: all 0.2s ease;
+}
+
+.cyber-btn:hover {
+    background: #ff0055 !important;
+    color: white !important;
+    box-shadow: 0 0 20px #ff0055 !important;
+    transform: translate(2px, 2px);
 }
