@@ -312,3 +312,35 @@ h3 {
     box-shadow: 0 0 20px #ff0055 !important;
     transform: translate(2px, 2px);
 }
+
+/*Additional code for certification*/
+
+.cert-image {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.cert-image:hover {
+    filter: brightness(1.2);
+    border-color: #00ff9f;
+}
+
+.verification-link {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: #00ff9f !important;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.verification-link:hover {
+    color: #ff0055 !important;
+    text-shadow: 0 0 10px #ff0055;
+}
