@@ -9,9 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
@@ -38,36 +36,27 @@
     </nav>
 
     <main class="container main-content flex justify-center pt-32 pb-20">
-        <div
-            class="twitter-card relative w-full max-w-[850px] bg-black/60 backdrop-blur-xl border border-white/10 rounded-[30px] shadow-[0_0_50px_rgba(0,0,0,0.9)] transition-all duration-500 hover:border-[#33ff00]/40 !overflow-visible flex flex-col">
+        <div class="twitter-card relative w-full max-w-[850px] bg-black/60 backdrop-blur-xl border border-white/10 rounded-[30px] shadow-[0_0_50px_rgba(0,0,0,0.9)] transition-all duration-500 hover:border-[#33ff00]/40 !overflow-visible flex flex-col">
 
             <div class="cover-wrapper relative h-64 overflow-hidden rounded-t-[30px] border-b border-[#33ff00]/20">
                 <div class="cyber-banner h-full relative">
                     <div class="code-overlay absolute inset-0">
                         <canvas id="matrix-canvas"></canvas>
                     </div>
-
                     <div class="banner-grid absolute inset-0 opacity-20"></div>
-
-                    <div
-                        class="absolute inset-0 bg-gradient-to-b from-transparent via-[#33ff00]/20 to-transparent h-1/2 w-full animate-[scan_4s_linear_infinite] pointer-events-none z-10">
-                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#33ff00]/20 to-transparent h-1/2 w-full animate-[scan_4s_linear_infinite] pointer-events-none z-10"></div>
                 </div>
             </div>
 
             <div class="px-10 relative z-10">
                 <div class="relative -mt-20 w-40 h-40 group">
-                    <div
-                        class="absolute -inset-1 bg-gradient-to-r from-[#ff0055] to-[#00ff9f] rounded-full blur opacity-40 group-hover:opacity-100 transition duration-1000">
-                    </div>
-                    <img src="images/index/myself-logo.jpg" alt="Cyril Larga"
-                        class="relative w-full h-full border-4 border-[#0a0a0a] rounded-full object-cover shadow-2xl">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-[#ff0055] to-[#00ff9f] rounded-full blur opacity-40 group-hover:opacity-100 transition duration-1000"></div>
+                    <img src="images/index/myself-logo.jpg" alt="Cyril Larga" class="relative w-full h-full border-4 border-[#0a0a0a] rounded-full object-cover shadow-2xl">
                 </div>
             </div>
 
             <div class="profile-details pt-6 pb-12 px-10">
                 <div class="hero-text">
-
                     <h1 class="glitch-text text-4xl font-bold tracking-tight mb-2;">CYRIL JOHN PAUL LARGA</h1>
 
                     <p class="tagline text-[#ff0055] font-bold tracking-[0.2em] uppercase text-xs mb-8">
@@ -76,20 +65,15 @@
 
                     <div class="bio-container grid grid-cols-1 md:grid-cols-12 gap-8">
                         <div class="md:col-span-8 border-l-2 border-[#33ff00]/40 pl-6 py-2">
-                            <p class="role-title text-xl font-bold text-white mb-2">2nd Year IT Student | Aspiring
-                                Cybersecurity Personnel</p>
+                            <p class="role-title text-xl font-bold text-white mb-2">2nd Year IT Student | Aspiring Cybersecurity Personnel</p>
                             <p class="role-desc text-white/70 leading-relaxed italic">
                                 Specializing in system defense, and building resilient digital architectures.
                             </p>
                         </div>
 
-                        <div
-                            class="md:col-span-4 flex flex-col justify-center gap-3 font-mono text-[10px] text-[#00ff9f] opacity-80 tracking-widest uppercase">
-                            <div class="flex items-center gap-2"><span>📍</span> General Trias, Cavite, Philippines
-                            </div>
-                            <div class="flex items-center gap-2"><span>🔗</span> <a
-                                    href="https://github.com/PaulLarKaizen" target="_blank"
-                                    class="hover:text-white transition">github.com/PaulLarKaizen</a></div>
+                        <div class="md:col-span-4 flex flex-col justify-center gap-3 font-mono text-[10px] text-[#00ff9f] opacity-80 tracking-widest uppercase">
+                            <div class="flex items-center gap-2"><span>📍</span> General Trias, Cavite, Philippines</div>
+                            <div class="flex items-center gap-2"><span>🔗</span> <a href="https://github.com/PaulLarKaizen" target="_blank" class="hover:text-white transition">github.com/PaulLarKaizen</a></div>
                         </div>
                     </div>
                 </div>
@@ -116,11 +100,7 @@
             const parent = canvas.parentElement;
             canvas.width = parent.clientWidth;
             canvas.height = parent.clientHeight;
-
-
             columns = Math.floor(canvas.width / fontSize) + 2;
-
-
             drops = [];
             for (let i = 0; i < columns; i++) {
                 drops[i] = Math.random() * -100;
@@ -131,10 +111,8 @@
         initMatrix();
 
         function draw() {
-
             ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             ctx.fillStyle = "#00FF41";
             ctx.shadowBlur = 12;
             ctx.shadowColor = "#00FF41";
@@ -144,9 +122,7 @@
                 const text = Math.random() > 0.5 ? "1" : "0";
                 const x = (i - 0.5) * fontSize;
                 const y = drops[i] * fontSize;
-
                 ctx.fillText(text, x, y);
-
                 if (y > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
@@ -156,28 +132,8 @@
         }
 
         setInterval(draw, 35);
-
-        window.onload = function () {
-            Swal.fire({
-                title: '<span class="status-training animate-pulse">SYSTEM ACCESS GRANTED</span>',
-                html: `
-            <div class="cyber-content">
-                WELCOME TO <span style="color: #ff0055; text-shadow: 0 0 10px #ff0055;">MY PORTFOLIO</span><br>
-                <small style="opacity: 0.5; font-size: 0.6em; letter-spacing: 1px;"><span class="status-training animate-pulse"><span> >> Initializing Connection</small>
-            </div>
-        `,
-                icon: 'success',
-                background: '#0a0a0a',
-                showConfirmButton: true,
-                confirmButtonText: 'INITIALIZE',
-
-                customClass: {
-                    popup: 'cyber-popup',
-                    title: 'cyber-title',
-                    confirmButton: 'cyber-btn'
-                }
-            });
-        }
+        
+        // POPUP REMOVED TO COMPLY WITH PROFESSOR'S FEEDBACK
     </script>
 </body>
 
