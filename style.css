@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
 
-body {
-    background-color: #0a0a0a;
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
     overflow-x: hidden;
     font-family: 'Rajdhani', sans-serif;
     color: #ffffff !important;
@@ -49,6 +58,8 @@ body::before {
     padding: 12px 40px;
     clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
     transition: all 0.4s ease;
+    width: auto;
+    white-space: nowrap;
 }
 
 .hud-nav:hover {
@@ -74,12 +85,11 @@ body::before {
 }
 
 
-.main-content {
-    padding-top: 150px;
-    display: flex;
-    justify-content: center;
-    padding-left: 20px;
-    padding-right: 20px;
+.main-content, .container {
+    padding-top: 150px !important; 
+    max-width: 1000px;
+    margin: 0 auto;
+    display: block;
 }
 
 .twitter-card {
@@ -199,13 +209,48 @@ body::before {
 
 .logo-box {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    flex-direction: column; 
+    gap: 12px;
     margin: 20px 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
     padding: 15px;
     border-radius: 8px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.03); 
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+.tech-logo {
+    height: 25px; 
+    width: 25px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 159, 0.2));
+}
+
+.tech-item span {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.tech-item::before {
+    content: '>';
+    color: #00ff9f; /* Matches your hover green */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0.8;
 }
 
 .tech-logo {
@@ -226,6 +271,57 @@ h3 {
     text-align: justify;
     font-size: 1.1rem;
     line-height: 1.7;
+}
+
+.tech-list-vertical {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tech-list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.03); 
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+.tech-list-item::before {
+    content: '>';
+    color: #33ff00;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+
+.tech-list-item:hover {
+    background: rgba(51, 255, 0, 0.08);
+    border-left: 2px solid #33ff00;
+    transform: translateX(8px);
+}
+
+
+.tech-logo-small {
+    height: 22px;
+    width: 22px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(51, 255, 0, 0.2));
+}
+
+.tech-list-item span {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 768px) {
